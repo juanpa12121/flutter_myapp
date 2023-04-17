@@ -41,14 +41,19 @@ class MyHomePage extends StatelessWidget {
                 backgroundColor: Colors.black,
               ),
             ),
-            const SizedBox(height: 20), //Agregar un espacio entre el texto y la imagen
+            const SizedBox(height: 20),
+            //Agregar un espacio entre el texto y la imagen
             Image.network(
               //flutter image
               "https://www.alisco-it.com/wp-content/uploads/2022/01/Flutter_Featured_Logo.png",
               width: 200,
               height: 200,
-
             ),
+            IconButton(
+                onPressed: () {
+                  print("hola");
+                },
+                icon: Icon(Icons.close_rounded), iconSize: 50, color: Colors.blue),
           ],
         ),
       ),
