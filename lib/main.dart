@@ -27,16 +27,31 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     //Widget que nos permite acomodar diferentes elementos en la pantalla (navbar, body, etc)
     return Scaffold(
-        appBar: AppBar(),
-        body: const Center(
-          child: Text("Hola, bienvenido a Flutter",
+      appBar: AppBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Hola, bienvenido a Flutter",
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                backgroundColor: Colors.black
-              )
-          ),
-        ));
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                backgroundColor: Colors.black,
+              ),
+            ),
+            const SizedBox(height: 20), //Agregar un espacio entre el texto y la imagen
+            Image.network(
+              //flutter image
+              "https://www.alisco-it.com/wp-content/uploads/2022/01/Flutter_Featured_Logo.png",
+              width: 200,
+              height: 200,
+
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
