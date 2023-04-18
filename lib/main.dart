@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_myapp/19.%20ColumnClass.dart';
 import 'package:flutter_myapp/20.%20RowClass.dart';
 import 'package:flutter_myapp/21.%20MarginPadding.dart';
+import 'package:flutter_myapp/22.%20ColorsClass.dart';
 
 void main() {
   //runApp(const MyApp());
@@ -9,7 +10,8 @@ void main() {
   //runApp(const AppBarClass());
   //runApp(const ColumnClass());
   //runApp(const RowClass());
-  runApp(const MarginPadding());
+  //runApp(const MarginPadding());
+  runApp(const ColorsClass());
 }
 
 class MyApp extends StatelessWidget {
