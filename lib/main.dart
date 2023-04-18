@@ -53,10 +53,14 @@ class MyHomePage extends StatelessWidget {
                 onPressed: () {
                   print("hola");
                 },
-                icon: Icon(Icons.close_rounded), iconSize: 50, color: Colors.blue),
+                icon: Icon(Icons.close_rounded),
+                iconSize: 50,
+                color: Colors.blue),
           ],
         ),
       ),
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
     );
   }
 }
