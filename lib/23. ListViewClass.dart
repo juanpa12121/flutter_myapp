@@ -10,9 +10,8 @@ class ListViewClass extends StatelessWidget {
 }
 
 class ImagesApp extends StatelessWidget {
-
-
-  List<String> names = ["Juan",
+  List<String> names = [
+    "Juan",
     "Mario",
     "Marta",
     "Yosselyn",
@@ -28,24 +27,30 @@ class ImagesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("ListView"),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("ListView"),
+        ),
+        body: ListView.builder(
+            itemCount: names.length,
+            itemBuilder: (context, index) {
+              final name = names[index];
+              return ListTile(
+                  title: Text(name),
+                  leading: Icon(Icons.person),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  onTap: () {
+                    print("Tapped on item $index");
+                  });
+            }),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, "/home");
+          },
+          child: const Icon(Icons.arrow_forward_sharp),
+        ),
       ),
-      body: ListView.builder(
-          itemCount: names.length,
-          itemBuilder: (context, index) {
-            final name = names[index];
-            return ListTile(
-              title: Text(name),
-              leading: Icon(Icons.person),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {
-                print("Tapped on ${name}");
-              },
-            );
-      }),
     );
   }
 }

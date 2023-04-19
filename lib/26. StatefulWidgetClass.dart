@@ -28,16 +28,17 @@ class _StatefulWidgetClassState extends State<StatefulWidgetClass> {
               style: const TextStyle(fontSize: 30),
             ),
             LinearProgressIndicator(value: progressValue),
-            Switch(value: switchValue, onChanged: (value){
-              setState(() {
-                switchValue = value;
-              });
-            })
+            Switch(
+                value: switchValue,
+                onChanged: (value) {
+                  setState(() {
+                    switchValue = value;
+                  });
+                })
           ],
         )),
         floatingActionButton: FloatingActionButton(
-            onPressed: changeName,
-            child: const Icon(Icons.refresh)),
+            onPressed: changeName, child: const Icon(Icons.refresh)),
       ),
     );
   }
@@ -45,10 +46,9 @@ class _StatefulWidgetClassState extends State<StatefulWidgetClass> {
   //Metodo para cambiar el estado
   void changeName() {
     setState(() {
-
-      if(name == "Marvin"){
+      if (name == "Marvin") {
         name = "Ossiel";
-      }else{
+      } else {
         name = "Marvin";
       }
       progressValue += 0.01;

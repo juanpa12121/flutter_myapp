@@ -11,7 +11,15 @@ class ScaffoldClass extends StatelessWidget {
         appBar: AppBar(
           title: Text("Uso del Scaffold"),
         ),
-        body: Center(),
+        body: Center(
+          child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/appbar");
+              },
+              icon: const Icon(Icons.arrow_forward_sharp),
+              iconSize: 50,
+              color: Colors.blue, ),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: Icon(Icons.add),

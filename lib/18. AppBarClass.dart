@@ -20,6 +20,15 @@ class AppBarClass extends StatelessWidget {
             //Icono hacia atras
             leading: IconButton(onPressed: _add, icon: Icon(Icons.arrow_back)) ,
           ),
+          body: Center(
+            child: IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/columnclass");
+              },
+              icon: const Icon(Icons.arrow_circle_right),
+              iconSize: 80,
+              color: Colors.deepPurple, ),
+          ),
         ));
   }
 }

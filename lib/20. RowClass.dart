@@ -40,7 +40,14 @@ class RowClass extends StatelessWidget {
                   Container(height: 50, width: 50, color: Colors.green),
                   Container(height: 50, width: 50, color: Colors.deepOrange),
                 ],
-              )
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, "/marginpadding");
+                },
+                icon: const Icon(Icons.arrow_forward_sharp),
+                iconSize: 50,
+                color: Colors.blueGrey, ),
             ],
           ),
         ),

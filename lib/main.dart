@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_myapp/17.%20ScaffoldClass.dart';
+import 'package:flutter_myapp/18.%20AppBarClass.dart';
 import 'package:flutter_myapp/19.%20ColumnClass.dart';
 import 'package:flutter_myapp/20.%20RowClass.dart';
 import 'package:flutter_myapp/21.%20MarginPadding.dart';
 import 'package:flutter_myapp/22.%20ColorsClass.dart';
 import 'package:flutter_myapp/23.%20ListViewClass.dart';
 import 'package:flutter_myapp/26.%20StatefulWidgetClass.dart';
+import 'package:flutter_myapp/pages/29_my_first_page.dart';
+import 'package:flutter_myapp/pages/29_my_second_page.dart';
 
 void main() {
-  //runApp(const MyApp());
+  runApp(const MyApp());
   //runApp(const ScaffoldClass());
   //runApp(const AppBarClass());
   //runApp(const ColumnClass());
@@ -15,7 +19,12 @@ void main() {
   //runApp(const MarginPadding());
   //runApp(const ColorsClass());
   //runApp(const ListViewClass());
-  runApp(const StatefulWidgetClass());
+  //runApp(const StatefulWidgetClass());
+  // runApp(
+  //   MaterialApp(
+  //     home: MyFirstPage(),
+  //   ),
+  // );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,9 +35,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      //home: const MyHomePage(),
+      initialRoute: "/home",
+      routes: {
+        "/home" : ( context ) => const MyHomePage(),
+        "/scaffold" : ( context ) => const ScaffoldClass(),
+        "/appbar" : ( context ) => const AppBarClass(),
+        "/columnclass" : ( context ) => const ColumnClass(),
+        "/rowclass" : ( context ) => const RowClass(),
+        "/marginpadding" : ( context ) => const MarginPadding(),
+        "/colorsclass" : ( context ) => const ColorsClass(),
+        "/listviewclass" : ( context ) => const ListViewClass(),
+        "/stateful_widget" : ( context ) => const StatefulWidgetClass(),
+        "/my_first_page" : ( context ) => const MyFirstPage(),
+        "/my_second_page" : ( context ) => const MySecondPage(),
+      } ,
     );
   }
 }
@@ -65,9 +88,10 @@ class MyHomePage extends StatelessWidget {
             ),
             IconButton(
                 onPressed: () {
+                  Navigator.pushNamed(context, "/scaffold");
                   print("hola");
                 },
-                icon: Icon(Icons.close_rounded),
+                icon: const Icon(Icons.arrow_forward_sharp),
                 iconSize: 50,
                 color: Colors.blue),
           ],

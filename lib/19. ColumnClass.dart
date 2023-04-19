@@ -41,7 +41,14 @@ class ColumnClass extends StatelessWidget {
                 Image.network(
                   "https://www.mobileappdaily.com/public/uploads/mad_8473c4dd3e.gif",
                   height: 100,
-                )
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, "/rowclass");
+                  },
+                  icon: const Icon(Icons.arrow_forward_sharp),
+                  iconSize: 50,
+                  color: Colors.deepOrange, ),
               ],
             ),
           )),
